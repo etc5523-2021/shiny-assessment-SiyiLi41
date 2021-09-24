@@ -11,7 +11,7 @@ In this shinyapp, the package is used including: **shiny**, **plotly**,
 Please install all this package before you visit the shinyapp.
 
 ``` r
-install.packages(c("shiny", "crosstalk", "plotly", "DT", "tidyverse", "here"))
+install.packages(c("shiny", "crosstalk", "plotly", "DT", "tidyverse", "here","ggplot2"))
 ```
 
 ## How to run the app

@@ -77,7 +77,7 @@ server <- function(input, output, session) ({
   newdata <- reactive(
     if(input$small_countries){
       tidy_fuels%>%
-        group_by(continent)%>%
+         group_by(continent)%>%
         filter(year==input$year)%>%
         filter(total_population > 1000000)
     }else{
@@ -114,38 +114,39 @@ server <- function(input, output, session) ({
               aes(x=gdp_per_capita,
                   y=cooking,
                   label=country,
-                  color = continent,
-                  size=5))+
+                  color=continent))+
       geom_point()+
       scale_size_continuous(trans = "log10") +
       scale_y_continuous(labels = scales::label_percent(scale = 1)) +
+      geom_point(data = data(),
+                 aes(x=gdp_per_capita,
+                     y=cooking,
+                     size=100))+
       labs(x = "GDP per captia",
            y = "Access to clean fuels and technologies for cooking",
            color = "continent",
-           title = "Access to clean fuels for cooking vs. GDP per capita")+
-      geom_point(
-      data = data() ,
-      aes(x=gdp_per_capita,
-          y=cooking,
-          size= 100)
-      )
+           title = "Access to clean fuels for cooking vs. GDP per capita",
+           size=" ")
 
 
     if(input$linear_scale){
-      p2<- ggplotly(p,
-                    tooltip = c("country","cooking","gdp_per_capita","total_ population"))
+      p2<- ggplotly(p, tooltip = c("country","cooking","gdp_per_capita","total_ population"))
+
       p3<-p2 %>%
         config(displaylogo = FALSE,
                modeBarButtonsToRemove = c("zoomIn2d", "zoomOut2d", "zoom2d", "pan2d"))
 
 
-      highlight(p3, dynamic = TRUE, on = "plotly_hover")
+      highlight(p3, dynamic = TRUE,  on = "plotly_hover")
     }
 
     else{
       p4<- ggplotly(p + scale_x_log10(c(1000, 2000, 5000, 10000, 20000, 50000, 100000),
-                                     labels = ~scales::dollar(., accuracy=1)),
+                                     labels = ~scales::dollar(., accuracy=1))+
+                      labs(x = "GDP"),
                     tooltip = c("country","cooking","gdp_per_capita","total_ population"))
+
+
       p5<-p4 %>%
         config(displaylogo = FALSE,
                modeBarButtonsToRemove = c("zoomIn2d", "zoomOut2d", "zoom2d", "pan2d"))
