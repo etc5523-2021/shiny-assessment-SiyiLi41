@@ -3,10 +3,11 @@ library(DT)
 library(tidyverse)
 library(plotly)
 library(here)
+library(ggplot2)
 
-# once you've prepared the data uncomment this line
 tidy_fuels <- read_csv(here("data", "cooking.csv"))
-# you might want to use highlight_key here
+
+
 fuels<-tidy_fuels%>%
   mutate(new_cooking=noquote(format(cooking, digits=2, nsmall=2)),
          new_gdp_per_capita=noquote(format(gdp_per_capita, digits=2, nsmall=2)),
@@ -128,20 +129,6 @@ server <- function(input, output, session) ({
           y=cooking,
           size= 100)
       )
-
-
-    # p1<-ggplot()+
-    #   geom_point(
-    #   data = data(),
-    #   aes(x=gdp_per_capita,
-    #       y=cooking,
-    #       size= cooking))
-
-    # if(length(input$countries)==0){
-    #   p
-    #   }else{ p1
-
-          # inherit.aes = FALSE
 
 
     if(input$linear_scale){

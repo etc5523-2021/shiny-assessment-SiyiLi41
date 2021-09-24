@@ -3,11 +3,12 @@
 
 # shiny for accessing to clean fuels for cooking vs gdp per capita
 
-## Siyi Li + 29018102
+## Siyi Li (29018102)
 
-This is a template that contains materials to create a shiny gadget
-application for assessment 2. You will need the following packages
-installed to generate the gadget from this template:
+In this shinyapp, the package is used including: **shiny**, **plotly**,
+**tidyverse**, **crosstalk**, **DT**, **ggplot2**
+
+Please install all this package before you visit the shinyapp.
 
 ``` r
 install.packages(c("shiny", "crosstalk", "plotly", "DT", "tidyverse", "here"))
@@ -15,9 +16,41 @@ install.packages(c("shiny", "crosstalk", "plotly", "DT", "tidyverse", "here"))
 
 ## How to run the app
 
-## Session Info
+-   About the **chart** session, which shows the access to the fuels for
+    cooking and GDP per capita.
 
-Add the session info here.
+On the upper left of the chart, you can click the **Linearize x-axis**
+to get the different chart which has the linear x-axis (the value on the
+x-axis without the log10 transformation).
+
+On the upper right of the chart, you could click **Hide countries &lt; 1
+million** to filter out the countries which has population size less
+than 1 million.
+
+On the middle, you could find a box which has the lable **Which country
+do you want to analyze**, you can select one or more countries and get
+their information.
+
+On the bottom of the chart, you also can find a time bar, you can move
+the circle button to see the points in different years.
+
+Finally, you can click each point to get more details.
+
+-   About the **table** session, you can click the top of the table
+    button to get the whole dataset.
+
+The table contains the variables like continent, country, code, year,
+new\_cooking, new\_gdp\_per\_capita and population. in each variable
+column, you could sort the variable with decreasing or incresing order.
+
+You also can search something that you are interested in.
+
+-   About the **about** session, you can find more information from the
+    source link, and you can find my Github from the Github link.
+
+## Session Information
+
+The session info is:
 
 ``` r
  sessioninfo::session_info()
