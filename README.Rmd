@@ -27,7 +27,7 @@ install.packages(c("shiny", "crosstalk", "plotly", "DT", "tidyverse", "here","gg
 
 ## How to run the app
 
-- About the **chart** session, which shows the access to the fuels for cooking and GDP per capita.
+- About the **chart** section, which shows the access to the fuels for cooking and GDP per capita.
 
 On the upper left of the chart, you can click the **Linearize x-axis** to get the different chart which has the linear x-axis (the value on the x-axis without the log10 transformation).
 
@@ -35,19 +35,19 @@ On the upper right of the chart, you could click **Hide countries < 1 million** 
 
 On the middle, you could find a box which has the lable **Which country do you want to analyze**, you can select one or more countries and get their information.
 
-On the bottom of the chart, you also can find a time bar, you can move the circle button to see the points in different years.
+On the bottom of the chart, you also can find a time bar, you can move the circle button to see the points(different countries) in different years.
 
 Finally, you can click each point to get more details.
 
 
--  About the **table** session, you can click the top of the table button to get the whole dataset.
+-  About the **table** section, you can click the top of the table button to get the whole dataset.
 
 The table contains the variables like continent, country, code, year, new_cooking, new_gdp_per_capita and population. in each variable column, you could sort the variable with decreasing or incresing order.
 
 You also can search something that you are interested in.
 
 
--  About the **about** session, you can find more information from the source link, and you can find my Github from the Github link.
+-  About the **about** section, you can find more information from the source link, and you can find my Github from the Github link.
 
 
 
