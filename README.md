@@ -50,7 +50,7 @@ You also can search something that you are interested in.
 
 ## Session Information
 
-The session info is:
+The session information is:
 
 ``` r
  sessioninfo::session_info()
