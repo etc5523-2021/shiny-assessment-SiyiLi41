@@ -209,9 +209,9 @@ server <- function(input, output, session) ({
   ur1<-a("github", href="https://github.com/SiyiLi41")
   ur2<-a("source", href="https://ourworldindata.org/grapher/access-to-clean-fuels-for-cooking-vs-gdp-per-capita")
   output$tab<-renderUI({
-    tagList("URL:",ur1,
+    tagList("URL link of github:",ur1,
             br(),br(),br(),
-            "URL:",ur2)
+            "URL link of sources:",ur2)
   })
 
 
